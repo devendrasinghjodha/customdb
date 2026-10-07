@@ -7,13 +7,16 @@ CustomDB is a small C++17 embedded key-value database built around an ordered in
 ```powershell
 cmake -S . -B build
 cmake --build build --config Release
+ctest --test-dir build --output-on-failure
 ```
 
 ## Run
 
 ```powershell
-./build/Release/customdb.exe data.db
+./build/customdb.exe data.db
 ```
+
+The build directory must be configured from the current checkout. A clean Ninja build can be created with `cmake -S . -B build-clean -G Ninja -DCMAKE_BUILD_TYPE=Release`.
 
 Commands:
 
